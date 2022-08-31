@@ -13,6 +13,10 @@ router.post("",async(req,res)=>{
     return res.status(200).send(product)
 })
 
+router.get("", async(req,res)=>{
+    const product = await Rev.find().lean().exec()
+    return res.status(200).send(product)
+})
 
 
 router.delete("/:id",async(req,res)=>{
